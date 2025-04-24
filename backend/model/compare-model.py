@@ -96,3 +96,12 @@ plt.ylim(0, 1)
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.show()
+
+
+best_model = RandomForestClassifier()
+best_model.fit(X_train, y_train)
+joblib.dump(best_model, "random_forest_model.pkl")
+
+joblib.dump(scaler, "scaler.pkl")
+
+joblib.dump(X.columns.tolist(), "columns.pkl")
